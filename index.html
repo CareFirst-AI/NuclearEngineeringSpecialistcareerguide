@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuclear Engineering Specialist – AI Trainer</title>
+    <style>
+        * {
+            margin: 0.1rem;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0d3d56 100%);
+            color: #00ff41;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.1rem;
+        }
+        header {
+            background: rgba(0, 255, 65, 0.1);
+            border: 2px solid #00ff41;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+        h1 {
+            font-size: 2rem;
+            text-shadow: 0 0 10px #00ff41;
+            color: #00ffff;
+        }
+        .subtitle {
+            color: #ffaa00;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #00ff41;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.1rem;
+            padding: 0.5rem;
+        }
+        nav button {
+            background: linear-gradient(45deg, #0a3d62, #1e5f74);
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            padding: 0.7rem 1.2rem;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        nav button:hover {
+            background: #00ff41;
+            color: #0a0e27;
+            box-shadow: 0 0 15px #00ff41;
+            transform: scale(1.05);
+        }
+        nav button.active {
+            background: #00ffff;
+            color: #0a0e27;
+            box-shadow: 0 0 20px #00ffff;
+        }
+        .content {
+            background: rgba(10, 14, 39, 0.8);
+            border: 2px solid #00ff41;
+            padding: 1.5rem;
+            margin-top: 0.1rem;
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 {
+            color: #00ffff;
+            border-bottom: 2px solid #00ff41;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 5px #00ffff;
+        }
+        h3 {
+            color: #ffaa00;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .card {
+            background: rgba(0, 61, 98, 0.3);
+            border-left: 4px solid #00ff41;
+            padding: 1rem;
+            margin: 0.5rem 0.1rem;
+        }
+        .highlight {
+            background: rgba(255, 170, 0, 0.2);
+            border: 1px solid #ffaa00;
+            padding: 0.8rem;
+            margin: 0.5rem 0.1rem;
+            color: #ffaa00;
+        }
+        .warning {
+            background: rgba(255, 65, 54, 0.2);
+            border: 1px solid #ff4136;
+            padding: 0.8rem;
+            margin: 0.5rem 0.1rem;
+            color: #ff6b6b;
+        }
+        ul {
+            margin-left: 1.5rem;
+        }
+        li {
+            margin: 0.3rem 0;
+        }
+        .atom-symbol {
+            display: inline-block;
+            color: #00ffff;
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            color: #00ff41;
+            margin-top: 0.1rem;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.5rem; }
+            nav button { padding: 0.5rem 0.8rem; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚛️ Nuclear Engineering Specialist – AI Trainer</h1>
+            <div class="subtitle">Shape the Future of AI-Powered Nuclear Science</div>
+        </header>
+
+        <nav>
+            <button onclick="showSection('overview')" class="active">Overview</button>
+            <button onclick="showSection('role')">Role Details</button>
+            <button onclick="showSection('expertise')">Required Expertise</button>
+            <button onclick="showSection('daily')">Daily Tasks</button>
+            <button onclick="showSection('qualifications')">Qualifications</button>
+            <button onclick="showSection('skills')">Key Skills</button>
+            <button onclick="showSection('impact')">Impact</button>
+            <button onclick="showSection('apply')">How to Apply</button>
+        </nav>
+
+        <div class="content">
+            <div id="overview" class="section active">
+                <h2>🔬 Position Overview</h2>
+                <div class="highlight">
+                    <strong>Mission:</strong> Transform advanced language models from clever chatbots into powerful engines of scientific discovery in nuclear engineering.
+                </div>
+                
+                <div class="card">
+                    <h3>Why This Role Matters</h3>
+                    <p>Large-scale language models are evolving rapidly, and high-quality training data from domain experts is the key to unlocking their full potential. Your nuclear engineering expertise will:</p>
+                    <ul>
+                        <li>Democratize world-class nuclear education globally</li>
+                        <li>Keep AI systems aligned with cutting-edge research</li>
+                        <li>Streamline laboratory work for scientists worldwide</li>
+                        <li>Ensure accuracy in critical nuclear safety applications</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>The Opportunity</h3>
+                    <p>As a Nuclear Engineering Specialist – AI Trainer, you'll bridge the gap between advanced nuclear science and artificial intelligence. Your work will directly shape how future AI systems understand, reason about, and assist with nuclear engineering challenges—from reactor design to radiation safety.</p>
+                </div>
+            </div>
+
+            <div id="role" class="section">
+                <h2>💼 Role Description</h2>
+                
+                <div class="card">
+                    <h3><span class="atom-symbol">⚛️</span>Core Responsibility</h3>
+                    <p>Challenge and refine advanced language models on nuclear engineering topics, documenting failure modes to harden model reasoning and improve accuracy across all nuclear science domains.</p>
+                </div>
+
+                <div class="card">
+                    <h3><span class="atom-symbol">🎯</span>Primary Objectives</h3>
+                    <ul>
+                        <li><strong>Test AI Knowledge:</strong> Probe models on reactor physics, radiation transport, thermal hydraulics, and nuclear systems</li>
+                        <li><strong>Verify Accuracy:</strong> Ensure factual correctness and logical soundness in all AI responses</li>
+                        <li><strong>Document Failures:</strong> Capture reproducible error traces for model improvement</li>
+                        <li><strong>Guide Development:</strong> Suggest improvements to prompt engineering and evaluation metrics</li>
+                    </ul>
+                </div>
+
+                <div class="warning">
+                    <strong>⚠️ Critical Importance:</strong> Your work ensures AI systems provide reliable information on safety-critical nuclear engineering topics where errors could have serious real-world consequences.
+                </div>
+            </div>
+
+            <div id="expertise" class="section">
+                <h2>🧪 Required Technical Expertise</h2>
+                
+                <div class="card">
+                    <h3>Core Nuclear Engineering Domains</h3>
+                    <p>We need specialists who "live and breathe" these areas:</p>
+                </div>
+
+                <div class="card">
+                    <h3><span class="atom-symbol">⚛️</span>Reactor Physics & Neutronics</h3>
+                    <ul>
+                        <li>Neutron moderation and thermalization</li>
+                        <li>Reactor core design and criticality analysis</li>
+                        <li>Neutron transport theory and diffusion</li>
+                        <li>Reactor kinetics and control</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3><span class="atom-symbol">☢️</span>Radiation Physics & Shielding</h3>
+                    <ul>
+                        <li>Radiation transport modeling</li>
+                        <li>Shielding design and optimization</li>
+                        <li>Dose calculation methodologies</li>
+                        <li>Radiation detection methods and instrumentation</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3><span class="atom-symbol">🔥</span>Thermal-Hydraulics</h3>
+                    <ul>
+                        <li>Coolant flow analysis</li>
+                        <li>Heat transfer in nuclear systems</li>
+                        <li>Two-phase flow phenomena</li>
+                        <li>Reactor thermal analysis</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3><span class="atom-symbol">🛡️</span>Nuclear Safety & Risk</h3>
+                    <ul>
+                        <li>Reactor safety systems and analysis</li>
+                        <li>Probabilistic risk assessment (PRA)</li>
+                        <li>Accident scenario modeling</li>
+                        <li>Safety culture and regulatory compliance</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3><span class="atom-symbol">♻️</span>Nuclear Fuel Cycle</h3>
+                    <ul>
+                        <li>Fuel cycle analysis and optimization</li>
+                        <li>Nuclear waste management strategies</li>
+                        <li>Spent fuel handling and storage</li>
+                        <li>Reprocessing and recycling technologies</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3><span class="atom-symbol">🔬</span>Nuclear Materials & Instrumentation</h3>
+                    <ul>
+                        <li>Nuclear materials science and behavior</li>
+                        <li>Radiation damage mechanisms</li>
+                        <li>Nuclear instrumentation and control</li>
+                        <li>Measurement techniques and diagnostics</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3><span class="atom-symbol">💻</span>Computational Methods</h3>
+                    <ul>
+                        <li>Nuclear system modeling and simulation</li>
+                        <li>Monte Carlo methods for radiation transport</li>
+                        <li>Computational fluid dynamics for reactor systems</li>
+                        <li>Nuclear data processing and libraries</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="daily" class="section">
+                <h2>📋 A Typical Day</h2>
+                
+                <div class="card">
+                    <h3>1. Conversational Testing</h3>
+                    <p>Engage AI models in deep discussions about:</p>
+                    <ul>
+                        <li>Reactor operation scenarios and edge cases</li>
+                        <li>Theoretical nuclear engineering problems</li>
+                        <li>Complex multi-physics interactions</li>
+                        <li>Safety analysis methodologies</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>2. Verification & Validation</h3>
+                    <ul>
+                        <li>Check factual accuracy against established literature</li>
+                        <li>Verify logical soundness of reasoning chains</li>
+                        <li>Test edge cases and boundary conditions</li>
+                        <li>Identify conceptual misunderstandings</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>3. Error Documentation</h3>
+                    <ul>
+                        <li>Capture reproducible error traces with full context</li>
+                        <li>Categorize failure modes (factual, reasoning, calculation)</li>
+                        <li>Document the correct approach or solution</li>
+                        <li>Note patterns in model weaknesses</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>4. Strategic Improvement</h3>
+                    <ul>
+                        <li>Suggest prompt engineering improvements</li>
+                        <li>Recommend evaluation metric refinements</li>
+                        <li>Identify knowledge gaps requiring training data</li>
+                        <li>Propose test scenarios for specific domains</li>
+                    </ul>
+                </div>
+
+                <div class="highlight">
+                    <strong>💡 Key Principle:</strong> Clear, metacognitive communication—"showing your work"—is essential. We need experts who can articulate not just what is correct, but why and how they know it.
+                </div>
+            </div>
+
+            <div id="qualifications" class="section">
+                <h2>🎓 Qualifications & Background</h2>
+                
+                <div class="card">
+                    <h3>Educational Requirements</h3>
+                    <div class="highlight">
+                        <strong>Ideal:</strong> Master's or PhD in Nuclear Engineering or closely related field
+                    </div>
+                    <p>Related fields include: Nuclear Physics, Radiation Science, Reactor Engineering, Health Physics, Nuclear Materials Science</p>
+                </div>
+
+                <div class="card">
+                    <h3>Experience Indicators (Strong Fit)</h3>
+                    <ul>
+                        <li><strong>Research Publications:</strong> Peer-reviewed papers in nuclear engineering journals</li>
+                        <li><strong>Reactor Research:</strong> Hands-on experience with research reactors or facilities</li>
+                        <li><strong>Industry Experience:</strong> Work at nuclear facilities, power plants, or national laboratories</li>
+                        <li><strong>Computational Projects:</strong> Nuclear modeling, simulation, or code development</li>
+                        <li><strong>Regulatory Work:</strong> Experience with NRC or international regulatory frameworks</li>
+                        <li><strong>Teaching:</strong> Nuclear engineering instruction or curriculum development</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Technical Depth Examples</h3>
+                    <p>You should be comfortable discussing topics such as:</p>
+                    <ul>
+                        <li>Six-factor formula and its applications in reactor design</li>
+                        <li>Monte Carlo vs. deterministic transport methods trade-offs</li>
+                        <li>Xenon poisoning dynamics and reactor stability</li>
+                        <li>Departure from nucleate boiling (DNB) correlations</li>
+                        <li>Event tree and fault tree analysis methodologies</li>
+                        <li>Advanced reactor concepts (Gen IV, SMRs, fusion)</li>
+                    </ul>
+                </div>
+
+                <div class="warning">
+                    <strong>Security Note:</strong> Some positions may require security clearance or ability to obtain clearance depending on project scope and client requirements.
+                </div>
+            </div>
+
+            <div id="skills" class="section">
+                <h2>🔑 Essential Skills</h2>
+                
+                <div class="card">
+                    <h3><span class="atom-symbol">💭</span>Metacognitive Communication</h3>
+                    <p>The ability to explain your reasoning process is critical:</p>
+                    <ul>
+                        <li>Articulate assumptions and approximations</li>
+                        <li>Explain why certain approaches are valid or invalid</li>
+                        <li>Break down complex problems step-by-step</li>
+                        <li>Identify sources of uncertainty</li>
+                        <li>Connect concepts across nuclear engineering domains</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3><span class="atom-symbol">🔍</span>Critical Evaluation</h3>
+                    <ul>
+                        <li>Spot subtle technical errors in reasoning</li>
+                        <li>Distinguish between acceptable approximations and serious mistakes</li>
+                        <li>Evaluate the appropriateness of methods for given problems</li>
+                        <li>Assess the quality of technical explanations</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3><span class="atom-symbol">📝</span>Technical Documentation</h3>
+                    <ul>
+                        <li>Write clear, detailed error reports</li>
+                        <li>Document test cases and expected outcomes</li>
+                        <li>Create reproducible failure scenarios</li>
+                        <li>Maintain organized records of model interactions</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3><span class="atom-symbol">🎯</span>Adversarial Testing Mindset</h3>
+                    <ul>
+                        <li>Design challenging test scenarios</li>
+                        <li>Probe model boundaries and limitations</li>
+                        <li>Think creatively about failure modes</li>
+                        <li>Balance breadth and depth in testing coverage</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3><span class="atom-symbol">🤝</span>Collaborative Skills</h3>
+                    <ul>
+                        <li>Work effectively with AI researchers and engineers</li>
+                        <li>Translate domain expertise for non-specialists</li>
+                        <li>Provide constructive feedback on model development</li>
+                        <li>Contribute to interdisciplinary problem-solving</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="impact" class="section">
+                <h2>🌟 Your Impact</h2>
+                
+                <div class="card">
+                    <h3>Democratizing Nuclear Education</h3>
+                    <p>Your work will help create AI systems that can provide world-class nuclear engineering education to students and professionals worldwide, regardless of their access to top-tier institutions or expensive resources.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Accelerating Research</h3>
+                    <p>By training AI to understand cutting-edge nuclear research, you'll help scientists quickly access relevant literature, identify research gaps, and explore novel concepts—speeding up the pace of innovation in nuclear technology.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Enhancing Safety</h3>
+                    <p>Accurate AI systems can assist in safety analysis, regulatory compliance, and risk assessment—but only if trained correctly. Your expertise ensures AI provides reliable information on safety-critical topics.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Streamlining Laboratory Work</h3>
+                    <p>From experiment planning to data analysis, AI assistants trained with your guidance will help nuclear scientists work more efficiently, freeing them to focus on creative problem-solving and discovery.</p>
+                </div>
+
+                <div class="highlight">
+                    <strong>🚀 Long-term Vision:</strong> Your contributions will be embedded in AI systems used by the next generation of nuclear engineers, influencing the field for decades to come.
+                </div>
+            </div>
+
+            <div id="apply" class="section">
+                <h2>📬 How to Apply</h2>
+                
+                <div class="card">
+                    <h3>Application Components</h3>
+                    <ul>
+                        <li><strong>Resume/CV:</strong> Highlighting nuclear engineering education and experience</li>
+                        <li><strong>Publication List:</strong> Peer-reviewed papers and conference proceedings</li>
+                        <li><strong>Cover Letter:</strong> Explain your domain expertise and interest in AI training</li>
+                        <li><strong>Technical Sample:</strong> Brief write-up demonstrating your ability to explain complex nuclear concepts clearly</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>What We're Looking For</h3>
+                    <ul>
+                        <li>Deep technical expertise in multiple nuclear engineering domains</li>
+                        <li>Exceptional communication and teaching ability</li>
+                        <li>Meticulous attention to detail</li>
+                        <li>Passion for advancing both nuclear science and AI</li>
+                        <li>Ability to think adversarially about AI capabilities</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Interview Process</h3>
+                    <p>Expect to demonstrate:</p>
+                    <ul>
+                        <li>Technical depth through problem-solving exercises</li>
+                        <li>Communication skills via explanatory discussions</li>
+                        <li>Critical thinking about AI model evaluation</li>
+                        <li>Sample AI interaction review and feedback</li>
+                    </ul>
+                </div>
+
+                <div class="highlight">
+                    <strong>💡 Pro Tip:</strong> In your application, showcase specific examples of how you've explained complex nuclear concepts to diverse audiences. The ability to "show your work" is key to success in this role.
+                </div>
+
+                <div class="card">
+                    <h3>Questions to Ask</h3>
+                    <p>During interviews, consider asking about:</p>
+                    <ul>
+                        <li>Specific AI model architectures you'll be working with</li>
+                        <li>Feedback mechanisms and impact tracking</li>
+                        <li>Collaboration with other domain experts</li>
+                        <li>Opportunities to contribute to research publications</li>
+                        <li>Long-term career development within the organization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>⚛️ Nuclear Engineering Specialist – AI Trainer | Shaping the Future of AI-Powered Science ⚛️</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #00ffff;">Your expertise today powers the AI discoveries of tomorrow</p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('nav button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Scroll to top of content
+            document.querySelector('.content').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
